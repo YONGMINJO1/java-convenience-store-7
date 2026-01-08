@@ -19,7 +19,7 @@ public class PromotionLoader {
         List<Promotion> promotions = new ArrayList<>();
 
         // 확인
-        System.out.println("헤더 제거 후:");
+        //System.out.println("헤더 제거 후:");
         for (String line : lines) {
             // 4단계
             String[] parts = line.split(",");
