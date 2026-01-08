@@ -27,6 +27,18 @@ public class InputParser {
 
     private PurchaseItem parseItem(String itemString) {
         itemString = itemString.trim();
+        // 검증
+        if (itemString == null || itemString.trim().isEmpty()) {
+            throw new IllegalArgumentException("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요.");
+        }
+
+        if (itemString.length() < 3) {
+            throw new IllegalArgumentException("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요.");
+        }
+
+        if (!itemString.startsWith("[") || !itemString.endsWith("]")) {
+            throw new IllegalArgumentException("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요.");
+        }
         // "[콜라-3]"
         // 앞뒤 공백 제거
         // 대괄호 제거

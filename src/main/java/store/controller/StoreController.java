@@ -40,8 +40,8 @@ public class StoreController {
 
         boolean continuesShopping = true;
         while (continuesShopping) {
-            try {
                 outputView.printProducts(products);
+            try {
                 processPurchase();
                 continuesShopping = askContinueShopping();
             } catch (IllegalArgumentException e) {
